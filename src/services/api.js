@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:5000/api'
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
 const getToken = () => localStorage.getItem('jinat_admin_token')
 
@@ -29,7 +29,6 @@ export const api = {
   updateSubmission: (id, data) => req('PATCH', `/submissions/${id}`, data),
   deleteSubmission: (id) => req('DELETE', `/submissions/${id}`),
 
-  // Gallery
   getPhotos: (campusId) => req('GET', `/gallery${campusId ? `?campusId=${campusId}` : ''}`),
   uploadPhoto: (campusId, caption, file) => {
     const token = localStorage.getItem('jinat_admin_token')
@@ -37,7 +36,7 @@ export const api = {
     form.append('photo', file)
     form.append('campusId', campusId)
     form.append('caption', caption || '')
-    return fetch(`http://localhost:5000/api/gallery`, {
+    return fetch(`${BASE}/gallery`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body: form,
