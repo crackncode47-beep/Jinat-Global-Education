@@ -12,8 +12,8 @@ export default function Navbar() {
   const { lang, toggle } = useLang()
 
   const navLabels = lang === 'en'
-    ? { home: 'Home', about: 'About Us', campuses: 'Campuses', programs: 'Academic Programs', jism: 'JISM Model', it: 'IT & Innovation', contact: 'Contact Us' }
-    : { home: 'হোম', about: 'আমাদের সম্পর্কে', campuses: 'ক্যাম্পাস', programs: 'একাডেমিক প্রোগ্রাম', jism: 'JISM মডেল', it: 'আইটি ও উদ্ভাবন', contact: 'যোগাযোগ' }
+    ? { home: 'Home', about: 'About Us', campuses: 'Campuses', programs: 'Academic Programs', vision: 'Vision & Mission', it: 'IT & Innovation', contact: 'Contact Us' }
+    : { home: 'হোম', about: 'আমাদের সম্পর্কে', campuses: 'ক্যাম্পাস', programs: 'একাডেমিক প্রোগ্রাম', vision: 'ভিশন ও মিশন', it: 'আইটি ও উদ্ভাবন', contact: 'যোগাযোগ' }
 
   useEffect(() => {
     const handler = (e) => {
@@ -95,7 +95,7 @@ export default function Navbar() {
             </div>
 
             <NavLink to="/programs" className={navLinkClass}>{navLabels.programs}</NavLink>
-            <NavLink to="/jism" className={navLinkClass}>{navLabels.jism}</NavLink>
+            <NavLink to="/vision-mission" className={navLinkClass}>{navLabels.vision}</NavLink>
             <NavLink to="/it-innovation" className={navLinkClass}>{navLabels.it}</NavLink>
             <NavLink to="/contact" className={navLinkClass}>{navLabels.contact}</NavLink>
           </div>
@@ -125,7 +125,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="lg:hidden border-t border-gray-100 py-4 space-y-1">
-            {[['/','home'],['/about','about'],['/programs','programs'],['/jism','jism'],['/it-innovation','it'],['/contact','contact']].map(([path, key]) => (
+            {[['/','home'],['/about','about'],['/programs','programs'],['/vision-mission','vision'],['/it-innovation','it'],['/contact','contact']].map(([path, key]) => (
               <NavLink key={path} to={path} onClick={() => setMenuOpen(false)}
                 className={({ isActive }) => `block px-3 py-2.5 rounded-lg text-sm font-medium ${isActive ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-50'}`}>
                 {navLabels[key]}
