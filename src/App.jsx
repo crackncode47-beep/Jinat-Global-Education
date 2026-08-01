@@ -8,6 +8,8 @@ import AcademicPrograms from './pages/AcademicPrograms'
 import ITInnovation from './pages/ITInnovation'
 import Contact from './pages/Contact'
 import InstitutionPage from './pages/InstitutionPage'
+import SavarKnowledgeCity from './pages/SavarKnowledgeCity'
+import JISM from './pages/JISM'
 import { LanguageProvider } from './context/LanguageContext'
 import { AdminAuthProvider, useAdminAuth } from './context/AdminAuthContext'
 import AdminLogin from './admin/pages/AdminLogin'
@@ -43,9 +45,11 @@ function PublicLayout() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/programs" element={<AcademicPrograms />} />
+          <Route path="/jism" element={<JISM />} />
           <Route path="/it-innovation" element={<ITInnovation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/campus/:slug" element={<InstitutionPage />} />
+          <Route path="/savar-knowledge-city" element={<SavarKnowledgeCity />} />
         </Routes>
       </main>
       <Footer />

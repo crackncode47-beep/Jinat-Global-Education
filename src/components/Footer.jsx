@@ -6,8 +6,8 @@ import { useLang } from '../context/LanguageContext'
 export default function Footer() {
   const { lang } = useLang()
   const quickLinks = lang === 'en'
-    ? [['/', 'Home'], ['/about', 'About Us'], ['/programs', 'Academic Programs'], ['/it-innovation', 'IT & Innovation'], ['/contact', 'Contact Us']]
-    : [['/', 'হোম'], ['/about', 'আমাদের সম্পর্কে'], ['/programs', 'একাডেমিক প্রোগ্রাম'], ['/it-innovation', 'আইটি ও উদ্ভাবন'], ['/contact', 'যোগাযোগ']]
+    ? [['/', 'Home'], ['/about', 'About Us'], ['/programs', 'Academic Programs'], ['/jism', 'JISM Model'], ['/it-innovation', 'IT & Innovation'], ['/contact', 'Contact Us']]
+    : [['/', 'হোম'], ['/about', 'আমাদের সম্পর্কে'], ['/programs', 'একাডেমিক প্রোগ্রাম'], ['/jism', 'JISM মডেল'], ['/it-innovation', 'আইটি ও উদ্ভাবন'], ['/contact', 'যোগাযোগ']]
   const headings = lang === 'en'
     ? { links: 'Quick Links', campuses: 'Our Campuses', contact: 'Contact' }
     : { links: 'দ্রুত লিংক', campuses: 'আমাদের ক্যাম্পাস', contact: 'যোগাযোগ' }
